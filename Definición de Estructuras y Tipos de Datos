@@ -1,0 +1,14 @@
+# Definicion de la estructura de datos para la gestion de tickets
+# Asignatura: Procesos Informaticos - Semana 4
+
+class TicketIncidencia:
+    def __init__(self, id_ticket, usuario, prioridad):
+        self.id_ticket = id_ticket
+        self.usuario = usuario
+        self.prioridad = prioridad  # Alta, Media, Baja
+        self.estado = "Abierto"
+        self.nivel_soporte = 1  # Inicia siempre en Nivel 1
+        self.resolucion = ""
+
+    def __str__(self):
+        return f"Ticket {self.id_ticket} - Estado: {self.estado} (Nivel {self.nivel_soporte})"
