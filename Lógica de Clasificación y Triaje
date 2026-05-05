@@ -1,0 +1,18 @@
+# Algoritmo de clasificacion segun criticidad y escalamiento
+# Simula la decision automatica en el flujo BPMN
+
+def clasificar_y_escalar(ticket):
+    print(f"Analizando ticket {ticket.id_ticket}...")
+    
+    # Automatizacion: Si la prioridad es Alta, escala directo a Nivel 2
+    if ticket.prioridad == "Alta":
+        ticket.nivel_soporte = 2
+        print(f"-> Escalamiento automatico a Nivel 2 por prioridad {ticket.prioridad}")
+    else:
+        print("-> Asignado a Nivel 1 para diagnostico inicial")
+    
+    return ticket
+
+# Prueba del proceso
+ticket_usuario = TicketIncidencia("TK-2026-001", "Usuario_IACC", "Alta")
+ticket_procesado = clasificar_y_escalar(ticket_usuario)
