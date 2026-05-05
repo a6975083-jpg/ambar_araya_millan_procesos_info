@@ -1,0 +1,19 @@
+# Finalizacion del proceso de incidencia
+# Generacion de bitacora para base de conocimientos
+
+def cerrar_incidencia(ticket, comentario_tecnico):
+    ticket.estado = "Cerrado"
+    ticket.resolucion = comentario_tecnico
+    
+    # Simulacion de registro en Base de Datos
+    log_final = {
+        "ID": ticket.id_ticket,
+        "Resolucion": ticket.resolucion,
+        "Status": "Exitoso"
+    }
+    
+    print(f"Proceso finalizado. Registro: {log_final}")
+    return log_final
+
+# Ejecucion del cierre
+cerrar_incidencia(ticket_procesado, "Se realizo limpieza de cache y actualizacion de drivers.")
